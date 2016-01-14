@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import net.balbum.baby.Util.ActivityUtil;
 import net.balbum.baby.Util.Define;
 import net.balbum.baby.Util.RoundedTransformation;
 import net.balbum.baby.Util.TimeUtil;
@@ -264,18 +265,20 @@ public class PosterMakingActivity2 extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_save) {
-            container.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-
-                    try {
-                        posterCapture(container);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
-                }
-            },1000);
+            ActivityUtil.goToActivity(context, MainActivity.class);
+//            container.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//
+//                    try {
+//                        posterCapture(container);
+//
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                }
+//            },1000);
         }
         return super.onOptionsItemSelected(item);
     }
